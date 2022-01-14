@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="ServerSoapService" targetNamespace="http://default_package/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://default_package/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema">
+  <import namespace="http://default_package/" schemaLocation="serversoap_schema1.xsd"/>
+</schema>
+  </wsdl:types>
+  <wsdl:message name="autenticarUser">
+    <wsdl:part name="parameters" element="tns:autenticarUser">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="registarUserResponse">
+    <wsdl:part name="parameters" element="tns:registarUserResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="cancelarQuartoResponse">
+    <wsdl:part name="parameters" element="tns:cancelarQuartoResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="reservarQuarto">
+    <wsdl:part name="parameters" element="tns:reservarQuarto">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="listarQuartosResponse">
+    <wsdl:part name="parameters" element="tns:listarQuartosResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="autenticarUserResponse">
+    <wsdl:part name="parameters" element="tns:autenticarUserResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="cancelarQuarto">
+    <wsdl:part name="parameters" element="tns:cancelarQuarto">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="listarQuartos">
+    <wsdl:part name="parameters" element="tns:listarQuartos">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="reservarQuartoResponse">
+    <wsdl:part name="parameters" element="tns:reservarQuartoResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="registarUser">
+    <wsdl:part name="parameters" element="tns:registarUser">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="ServerSoap">
+    <wsdl:operation name="reservarQuarto">
+      <wsdl:input name="reservarQuarto" message="tns:reservarQuarto">
+    </wsdl:input>
+      <wsdl:output name="reservarQuartoResponse" message="tns:reservarQuartoResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="autenticarUser">
+      <wsdl:input name="autenticarUser" message="tns:autenticarUser">
+    </wsdl:input>
+      <wsdl:output name="autenticarUserResponse" message="tns:autenticarUserResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cancelarQuarto">
+      <wsdl:input name="cancelarQuarto" message="tns:cancelarQuarto">
+    </wsdl:input>
+      <wsdl:output name="cancelarQuartoResponse" message="tns:cancelarQuartoResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarQuartos">
+      <wsdl:input name="listarQuartos" message="tns:listarQuartos">
+    </wsdl:input>
+      <wsdl:output name="listarQuartosResponse" message="tns:listarQuartosResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="registarUser">
+      <wsdl:input name="registarUser" message="tns:registarUser">
+    </wsdl:input>
+      <wsdl:output name="registarUserResponse" message="tns:registarUserResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServerSoapServiceSoapBinding" type="tns:ServerSoap">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="reservarQuarto">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="reservarQuarto">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="reservarQuartoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="autenticarUser">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="autenticarUser">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="autenticarUserResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cancelarQuarto">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="cancelarQuarto">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="cancelarQuartoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarQuartos">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="listarQuartos">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="listarQuartosResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="registarUser">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="registarUser">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="registarUserResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServerSoapService">
+    <wsdl:port name="ServerSoapPort" binding="tns:ServerSoapServiceSoapBinding">
+      <soap:address location="http://localhost:8080/ServerSoap/services/ServerSoapPort"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
